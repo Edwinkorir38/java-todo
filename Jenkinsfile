@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Clone Repo"){
             steps{
-                git branch: 'master', url: 'https://github.com/kadimasum/java-todo.git'
+                git branch: 'master', url: 'https://github.com/Edwinkorir38/java-todo.git'
             }
         }
         stage("Build Repo"){
@@ -11,12 +11,15 @@ pipeline{
                 sh "./gradlew clean build "
             }
         }
-        
         stage("Test Code"){
             steps{
                 sh "./gradlew test"
             }
         }
-        
+        stage("Run Project"){
+            steps{
+                sh "./gradlew run"
+            }
+        }
     }
 }
