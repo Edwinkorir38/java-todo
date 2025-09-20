@@ -16,10 +16,6 @@ pipeline{
                 sh "./gradlew test"
             }
         }
-        stage("Run Project"){
-            steps{
-                sh "./gradlew run"
-            }
-        }
+        
     }
 }
